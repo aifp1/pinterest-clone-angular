@@ -1,0 +1,20 @@
+<!-- <nav>
+    <div class="grid">
+        <div class="col">
+            <img src="../../public/images/Pinterest-logo.webp" alt="Logo Pinterest">
+        </div>
+        <div class="col">Boton Inicio</div>
+        <div class="col">Explorar</div>
+        <div class="col">Crear</div>
+        <div class="col">Busqueda</div>
+        <div class="col">Notificaciones</div>
+        <div class="col">Mensajes</div>
+        <div class="col">Usuario</div>
+    </div>
+</nav> -->
+
+<p-megaMenu [model]="items" styleClass="flex">
+    <ng-template pTemplate="start">
+        <img src="../../public/images/Pinterest-logo.webp" height="40" class="mr-2" alt="Logo Pinterest">
+    </ng-template>
+</p-megaMenu>
