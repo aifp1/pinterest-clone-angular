@@ -1,41 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { MegaMenuItem } from 'primeng/api';
+import { MenuItem, MessageService } from 'primeng/api';
 
-import { MegaMenuModule } from 'primeng/megamenu'
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import { ToolbarModule } from 'primeng/toolbar';
+import { SplitButtonModule } from 'primeng/splitbutton';
+import { DropdownModule } from 'primeng/dropdown';
 
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
   imports: [
-    MegaMenuModule,
+    ButtonModule,
+    InputTextModule,
+    ToolbarModule,
+    SplitButtonModule,
   ],
   templateUrl: './nav-bar.component.html',
-  styleUrl: './nav-bar.component.scss'
+  styleUrl: './nav-bar.component.scss',
+  providers: [MessageService],
 })
-export class NavBarComponent {
+export class NavBarComponent implements OnInit {
 
-  items: MegaMenuItem[] | undefined;
+  items: MenuItem[] | undefined;
+  value: string | undefined;
 
-  ngOnInit(){
-    this.items = [
-      {
-        label: "Inicio",
-        icon: "pi pi-fw pi-home",
-      },
-      {
-        label: "Explorar",
-        icon: "pi pi-fw pi-compass"
-      },
-      {
-        label: "Crear",
-        icon: "pi pi-fw pi-pencil"
-      },
-      {
-        label: "<input type='text' pInputText placeholder='Buscar'>",
-        icon: "pi pi-fw pi-search",
-        
-      }
-    ]
-  }
+  activeInicio: boolean = false;
+  activeExplorar: boolean = true;
+  activeCrear: boolean = true;
 
+  ngOnInit(){}
 }
